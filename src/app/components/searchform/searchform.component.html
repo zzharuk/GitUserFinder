@@ -1,0 +1,20 @@
+
+<div class="input-group my-3">
+    <input 
+        type="text" 
+        class="form-control" 
+        aria-label="Username" 
+        aria-describedby="user-search-btn" 
+        [(ngModel)]="userName"
+        placeholder="Github username" 
+        (ngModelChange)="searchUser()"
+        >
+</div>
+<div *ngIf="userFound; then usercard else notfoundcard"></div>
+<ng-template #usercard>
+    <app-usercard  [userCard]=userProfile [errMsg]=errorMSG></app-usercard>
+</ng-template>
+<ng-template #notfoundcard><app-not-found-card [errorMessage]="errorMSG" *ngIf="userName.length > 0 && errorMSG.length > 0"></app-not-found-card></ng-template>
+
+
+

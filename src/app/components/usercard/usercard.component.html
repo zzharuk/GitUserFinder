@@ -1,0 +1,14 @@
+<div class="card text-center">
+    <div class="card-body">
+        <h5 class="card-title">{{userCard.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{userCard.company}}</h6>
+        <div class="row">
+            <div class="col-6">Type: {{userCard.type}}</div>
+            <div class="col-6">ID: {{userCard.id}}</div>
+            <div class="col-6">Public Repos: {{userCard.public_repos}}</div>
+        </div>
+        <p class="card-text">{{userCard.bio}}</p>
+        <a (click)="routeToUser()" class="btn btn-primary text-white">Profile</a>
+    </div>
+</div>
+

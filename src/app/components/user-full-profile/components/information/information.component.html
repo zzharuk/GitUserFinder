@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-header">
+    {{userProfile.name}}
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-4"><img src="{{userProfile.avatar_url}}" alt="..." class="img-thumbnail"></div>
+      <div class="col-8">
+        <div class="bd-group d-flex justify-content-between mb-4">
+          <span class="badge badge-primary">Public repos: {{userProfile.public_repos}}</span>
+          <span class="badge badge-secondary">Public gists: {{userProfile.public_gists}}</span>
+          <span class="badge badge-success">Followers: {{userProfile.followers}}</span>
+          <span class="badge badge-danger">Following: {{userProfile.following}}</span>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">Company: {{ userProfile.company | json }}</li>
+          <li class="list-group-item">Website/blog: <a *ngIf="userProfile.blog"
+              href="{{ userProfile.blog }}">{{ userProfile.blog }}</a></li>
+          <li class="list-group-item">Locatin: {{ userProfile.location }}</li>
+          <li class="list-group-item">Account created: {{ userProfile.created_at | date }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a href="{{ userProfile.html_url }}" target="_blank" class="btn btn-outline-info mt-2">View Profile</a>
+      </div>
+    </div>
+  </div>
+</div>

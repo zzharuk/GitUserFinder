@@ -1,0 +1,9 @@
+<a href=""></a><a [routerLink]="['']" class="btn btn-outline-primary">Back To Home</a>
+<hr>
+<app-information *ngIf="fetchComplete"  [userProfile]="UserProfile" ></app-information>
+
+<div *ngIf="!fetchComplete" class="spinner-border text-secondary" role="status">
+    <span class="sr-only">Loading...</span>
+</div>
+<div class="my-5"></div>
+<app-user-repos-list *ngIf="fetchComplete" [repos]="UserRepos"></app-user-repos-list>
